@@ -1,5 +1,6 @@
 import React from 'react'
 import Shelf from './ReactComponents/Shelf'
+import SearchPlus from './ReactComponents/SearchPlus'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 
@@ -45,12 +46,12 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <Shelf />
+                <Shelf title="Currently Reading"/>
+                <Shelf title="Want to Read"/>
+                <Shelf title="Read"/>
                </div>
             </div>
-            <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-            </div>
+            <SearchPlus />
           </div>
         )}
       </div>
