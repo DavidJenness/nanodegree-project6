@@ -1,8 +1,22 @@
 import React, {Component} from "react"
 import Shelf from '../ReactComponents/Shelf'
 import SearchPlus from '../ReactComponents/SearchPlus'
+import * as BooksAPI from '../BooksAPI'
 
 export default class home extends Component {
+
+constructor(props) {
+  super(props)
+  this.state = { books:[]}
+}
+
+componentDidMount() {
+BooksAPI.getAll().then(response => {
+  this.setState({books: response});
+  console.log(this.state.books);
+})
+}
+
 
     render() {
         return(
