@@ -44,7 +44,7 @@ class search extends Component {
       })
   }
 
-  updateBook = (book, shelf) => {
+  updateBookInfo = (book, shelf) => {
     BooksAPI.update(book, shelf)
       .then(resp => {
         book.shelf = shelf;
@@ -82,7 +82,7 @@ class search extends Component {
           <ol className="books-grid">
             {
 
-              this.state.searchResults.map((book, key) => <Book updateBook={this.updateBook} book={book} key={key} />)
+              this.state.searchResults.map((book, key) => <Book updateBookInfo={this.updateBookInfo} book={book} key={key} />)
             }
           </ol>
 

@@ -17,7 +17,7 @@ class home extends Component {
     })
   }
 
-  updateBook = (book, shelf) => {
+  updateBookInfo = (book, shelf) => {
     BooksAPI.update(book, shelf)
       .then(resp => {
         book.shelf = shelf;
@@ -36,9 +36,9 @@ class home extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf updateBook={this.updateBook} title="Currently Reading" books={this.state.books.filter(x => x.shelf === "currentlyReading")} />
-            <Shelf updateBook={this.updateBook} title="Want to Read" books={this.state.books.filter(x => x.shelf === "wantToRead")} />
-            <Shelf updateBook={this.updateBook} title="Read" books={this.state.books.filter(x => x.shelf === "read")} />
+            <Shelf updateBookInfo={this.updateBookInfo} title="Currently Reading" books={this.state.books.filter(x => x.shelf === "currentlyReading")} />
+            <Shelf updateBookInfo={this.updateBookInfo} title="Want to Read" books={this.state.books.filter(x => x.shelf === "wantToRead")} />
+            <Shelf updateBookInfo={this.updateBookInfo} title="Read" books={this.state.books.filter(x => x.shelf === "read")} />
           </div>
         </div>
         <SearchPlus />
