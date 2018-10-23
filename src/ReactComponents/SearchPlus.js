@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 
 class SearchPlus extends React.Component {
-    render () {
+    render() {
         return (
             <div className="open-search">
-              <Link to={{ pathname: '/search' }}></Link>
+                <Link to={{ pathname: '/search' }}></Link>
             </div>
         );
     }

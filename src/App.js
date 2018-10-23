@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch,Route} from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import home from "./ReactViews/home"
 import search from "./ReactViews/search"
 
@@ -20,10 +20,10 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-      <Switch>
-        <Route exact path = {"/"} component ={home} />
-        <Route exact path = {"/search"} component ={search} />
-      </Switch>
+        <Switch>
+          <Route exact path={"/"} component={home} />
+          <Route exact path={"/search"} component={search} />
+        </Switch>
       </div>
     )
   }
