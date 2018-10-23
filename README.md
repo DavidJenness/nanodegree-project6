@@ -12,7 +12,7 @@ The search page has a text input that may be used to find books. As the value of
 
 ## Installation Instructions
 
-* To install this application, go to this URL : https://github.com/DavidJenness/nanodegree-project6
+* To install this application, go to this URL : [https://github.com/DavidJenness/nanodegree-project6]
 * From the "Clone or Download" dropdown, select "Download Zip"
 * Use your favorite unzip utility to decompress the zip to a directory of your choosing.
 * Next use your terminal window (Mac) or Command Prompt (PC) to go to that directory where you unizipped the files.
