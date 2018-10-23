@@ -50,8 +50,6 @@ class search extends Component {
       .then(resp => {
         book.shelf = shelf;
         this.setState(state => ({
-          
-          searchResults: state.searchResults.filter(x => x.id !== book.id)
         }))
       })
     }
