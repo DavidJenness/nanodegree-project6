@@ -28,12 +28,19 @@ class search extends Component {
 
         if (this.state.query == '') {return this.setState({searchResults: []})}
         if (response.length == undefined) {return this.setState({searchResults: []})}
-        //Look through the books on our shelves and hide any currently on shelf from showing in search results
-        for (let myBook of this.state.books) {
-          //console.log(myBook.shelf);
-          response = response.filter(function(el) { return el.id != myBook.id; }); 
-        }
-        //console.log(response);
+        
+        //Look through the books on our shelves and make sure the shelf status is up to date
+          this.state.books.forEach (function(item) {
+          console.log(item);
+         response.forEach (function(item2) {
+            if (item2.id == item.id) {
+              item2.shelf = item.shelf;
+           }
+         })
+         
+        });
+        
+        console.log(response);
         return this.setState({searchResults: response})
       })
     }
