@@ -1,11 +1,12 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 
 
 class SearchPlus extends React.Component {
     render () {
         return (
             <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+              <Link to={{ pathname: '/search' }}></Link>
             </div>
         );
     }
