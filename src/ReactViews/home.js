@@ -26,9 +26,9 @@ BooksAPI.getAll().then(response => {
             </div>
             <div className="list-books-content">
               <div>
-                <Shelf title="Currently Reading" books={this.state.books}/>
-                <Shelf title="Want to Read" books={this.state.books}/>
-                <Shelf title="Read" books={this.state.books}/>
+                <Shelf title="Currently Reading" books={this.state.books.filter(x => x.shelf === "currentlyReading")}/>
+                <Shelf title="Want to Read" books={this.state.books.filter(x => x.shelf === "wantToRead")}/>
+                <Shelf title="Read" books={this.state.books.filter(x => x.shelf === "read")}/>
                </div>
             </div>
             <SearchPlus />
