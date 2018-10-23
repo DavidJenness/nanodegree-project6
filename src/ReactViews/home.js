@@ -13,7 +13,7 @@ constructor(props) {
 componentDidMount() {
 BooksAPI.getAll().then(response => {
   this.setState({books: response});
-  console.log(this.state.books);
+
 })
 }
 

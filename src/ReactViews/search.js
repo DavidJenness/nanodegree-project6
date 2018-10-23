@@ -1,6 +1,5 @@
 import React, {Component} from "react"
 import { Link } from 'react-router-dom'
-import Shelf from '../ReactComponents/Shelf'
 import * as BooksAPI from '../BooksAPI'
 import Book from '../ReactComponents/Book'
 
@@ -18,7 +17,7 @@ class search extends Component {
   componentDidMount() {
     BooksAPI.getAll().then(response => {
       this.setState({books: response});
-      console.log(this.state.books);
+
     })
     }
 
@@ -26,21 +25,21 @@ class search extends Component {
       BooksAPI.search(this.state.query)
       .then(response => {
 
-        if (this.state.query == '') {return this.setState({searchResults: []})}
-        if (response.length == undefined) {return this.setState({searchResults: []})}
+        if (this.state.query === '') {return this.setState({searchResults: []})}
+        if (response.length === undefined) {return this.setState({searchResults: []})}
         
         //Look through the books on our shelves and make sure the shelf status is up to date
           this.state.books.forEach (function(bookOnShelfItem) {
-          console.log(bookOnShelfItem);
+
          response.forEach (function(responseItem) {
-            if (responseItem.id == bookOnShelfItem.id) {
+            if (responseItem.id === bookOnShelfItem.id) {
               responseItem.shelf = bookOnShelfItem.shelf;
            }
          })
          
         });
         
-        console.log(response);
+
         return this.setState({searchResults: response})
       })
     }
