@@ -3,7 +3,7 @@ import Shelf from '../ReactComponents/Shelf'
 import SearchPlus from '../ReactComponents/SearchPlus'
 import * as BooksAPI from '../BooksAPI'
 
-export default class home extends Component {
+class home extends Component {
 
   constructor(props) {
     super(props)
@@ -46,3 +46,5 @@ export default class home extends Component {
     );
   }
 }
+
+export default home;
