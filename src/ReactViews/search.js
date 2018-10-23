@@ -30,11 +30,11 @@ class search extends Component {
         if (response.length == undefined) {return this.setState({searchResults: []})}
         
         //Look through the books on our shelves and make sure the shelf status is up to date
-          this.state.books.forEach (function(item) {
-          console.log(item);
-         response.forEach (function(item2) {
-            if (item2.id == item.id) {
-              item2.shelf = item.shelf;
+          this.state.books.forEach (function(bookOnShelfItem) {
+          console.log(bookOnShelfItem);
+         response.forEach (function(responseItem) {
+            if (responseItem.id == bookOnShelfItem.id) {
+              responseItem.shelf = bookOnShelfItem.shelf;
            }
          })
          
