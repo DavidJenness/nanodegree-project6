@@ -17,6 +17,16 @@ BooksAPI.getAll().then(response => {
 })
 }
 
+updateBook = (book,shelf) => {
+  BooksAPI.update(book,shelf)
+  .then(resp => {
+    book.shelf = shelf;
+    this.setState(state => ({
+      books: state.books.filter(x => x.id !== book.id).concat([book])
+    }))
+  })
+}
+
 
     render() {
         return(
@@ -26,9 +36,9 @@ BooksAPI.getAll().then(response => {
             </div>
             <div className="list-books-content">
               <div>
-                <Shelf title="Currently Reading" books={this.state.books.filter(x => x.shelf === "currentlyReading")}/>
-                <Shelf title="Want to Read" books={this.state.books.filter(x => x.shelf === "wantToRead")}/>
-                <Shelf title="Read" books={this.state.books.filter(x => x.shelf === "read")}/>
+                <Shelf updateBook={this.updateBook} title="Currently Reading" books={this.state.books.filter(x => x.shelf === "currentlyReading")}/>
+                <Shelf updateBook={this.updateBook} title="Want to Read" books={this.state.books.filter(x => x.shelf === "wantToRead")}/>
+                <Shelf updateBook={this.updateBook} title="Read" books={this.state.books.filter(x => x.shelf === "read")}/>
                </div>
             </div>
             <SearchPlus />
