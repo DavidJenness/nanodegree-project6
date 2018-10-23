@@ -13,7 +13,6 @@ class home extends Component {
   componentDidMount() {
     BooksAPI.getAll().then(response => {
       this.setState({ books: response });
-
     })
   }
 
@@ -26,7 +25,6 @@ class home extends Component {
         }))
       })
   }
-
 
   render() {
     return (
