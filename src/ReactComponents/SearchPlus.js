@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default class SearchPlus extends React.Component {
+class SearchPlus extends React.Component {
     render () {
         return (
             <div className="open-search">
@@ -10,3 +10,5 @@ export default class SearchPlus extends React.Component {
         );
     }
 }
+
+export default SearchPlus;
