@@ -1,12 +1,14 @@
 import React from "react"
-export default class Book extends React.Component {
+class Book extends React.Component {
     render () {
         return (
+          <li>
 <div className="book">
                     <div className="book-top">
-                      <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url("http://books.google.com/books/content?id=uu1mC6zWNTwC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73pGHfBNSsJG9Y8kRBpmLUft9O4BfItHioHolWNKOdLavw-SLcXADy3CPAfJ0_qMb18RmCa7Ds1cTdpM3dxAGJs8zfCfm8c6ggBIjzKT7XR5FIB53HHOhnsT7a0Cc-PpneWq9zX&source=gbs_api")' }}></div>
+                      <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail}")` }}></div>
                       <div className="book-shelf-changer">
-                        <select>
+                        <select value = {this.props.book.shelf || "none"}>
+                          
                           <option value="move" disabled>Move to...</option>
                           <option value="currentlyReading">Currently Reading</option>
                           <option value="wantToRead">Want to Read</option>
@@ -15,10 +17,12 @@ export default class Book extends React.Component {
                         </select>
                       </div>
                     </div>
-                    <div className="book-title">1776</div>
-                    <div className="book-authors">David McCullough</div>
+                    <div className="book-title">{this.props.book.title}</div>
+                    <div className="book-authors">{this.props.book.authors || "No Author"}</div>
                   </div>
-                   
+                  </li>
         );
         }
     }
+
+    export default Book;
