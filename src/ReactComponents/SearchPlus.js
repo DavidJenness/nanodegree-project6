@@ -5,7 +5,7 @@ class SearchPlus extends React.Component {
     render() {
         return (
             <div className="open-search">
-                <Link to={{ pathname: '/search' }}></Link>
+                <Link to={{ pathname: '/Search' }}></Link>
             </div>
         );
     }

@@ -3,21 +3,15 @@ import { Link } from 'react-router-dom'
 import * as BooksAPI from '../BooksAPI'
 import Book from '../ReactComponents/Book'
 
-class search extends Component {
+class Search extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      books: [],
+      // books: [],
       searchResults: [],
       query: ""
     }
-  }
-
-  componentDidMount() {
-    BooksAPI.getAll().then(response => {
-      this.setState({ books: response });
-    })
   }
 
   searchForBooks() {
@@ -25,8 +19,9 @@ class search extends Component {
       .then(response => {
         if (this.state.query === '') { return this.setState({ searchResults: [] }) }
         if (response.length === undefined) { return this.setState({ searchResults: [] }) }
+        
         //Look through the books on our shelves and make sure the shelf status is up to date
-        this.state.books.forEach(function (bookOnShelfItem) {
+        this.props.bookList.forEach(function (bookOnShelfItem) {
           response.forEach(function (responseItem) {
             if (responseItem.id === bookOnShelfItem.id) {
               responseItem.shelf = bookOnShelfItem.shelf;
@@ -34,15 +29,6 @@ class search extends Component {
           })
         });
         return this.setState({ searchResults: response })
-      })
-  }
-
-  updateBookInfo = (book, shelf) => {
-    BooksAPI.update(book, shelf)
-      .then(resp => {
-        book.shelf = shelf;
-        this.setState(state => ({
-        }))
       })
   }
 
@@ -75,7 +61,7 @@ class search extends Component {
           )}
           <ol className="books-grid">
             {
-              this.state.searchResults.map((book, index) => <Book updateBookInfo={this.updateBookInfo} book={book} key={index} />)
+              this.state.searchResults.map((book, index) => <Book updateBookInfo={this.props.updateBookInfo} book={book} key={index} />)
             }
           </ol>
         </div>
@@ -84,4 +70,4 @@ class search extends Component {
   }
 }
 
-export default search;
+export default Search;
