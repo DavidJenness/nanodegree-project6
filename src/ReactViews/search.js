@@ -68,12 +68,18 @@ class search extends Component {
           </div>
         </div>
         <div className="search-books-results">
+        {/* Added a count based on the video in lesson 3.7 */}
+        {this.state.searchResults.length !== 0 && (<div className='search-count' >
+            <span> {this.state.searchResults.length} Books found that match your criteria </span> 
+        </div>
+        )}
           <ol className="books-grid">
             {
               this.state.searchResults.map((book, index) => <Book updateBookInfo={this.updateBookInfo} book={book} key={index} />)
             }
           </ol>
-        </div>j
+        </div>
+
           </div>
     );
   }
