@@ -11,8 +11,9 @@ class home extends Component {
   }
 
   componentDidMount() {
-    BooksAPI.getAll().then(response => {
-      this.setState({ books: response });
+    BooksAPI.getAll().then((response) => {
+      this.setState({ 
+        books: response });
     })
   }
 
@@ -21,7 +22,9 @@ class home extends Component {
       .then(resp => {
         book.shelf = shelf;
         this.setState(state => ({
-          books: state.books.filter(x => x.id !== book.id).concat([book])
+          books: state.books.filter(function(myBook){
+            if (myBook.id !== book.id) {return myBook}
+          }).concat([book])
         }))
       })
   }
