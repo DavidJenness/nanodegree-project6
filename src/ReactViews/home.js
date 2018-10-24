@@ -23,7 +23,7 @@ class home extends Component {
         book.shelf = shelf;
         this.setState(state => ({
           books: state.books.filter(function(myBook){
-            if (myBook.id !== book.id) {return myBook}
+            if (myBook.id !== book.id) {return myBook} else {return null}
           }).concat([book])
         }))
       })
@@ -38,13 +38,13 @@ class home extends Component {
         <div className="list-books-content">
           <div>
             <Shelf updateBookInfo={this.updateBookInfo} title="Currently Reading" books={this.state.books.filter(function myShelfCheck(myShelf) {
-              if (myShelf.shelf === "currentlyReading") return myShelf;
+              if (myShelf.shelf === "currentlyReading") {return myShelf} else {return null}
             })} />
             <Shelf updateBookInfo={this.updateBookInfo} title="Want to Read" books={this.state.books.filter(function myShelfCheck(myShelf) {
-              if (myShelf.shelf === "wantToRead") return myShelf;
+              if (myShelf.shelf === "wantToRead") {return myShelf} else {return null}
             })} />
             <Shelf updateBookInfo={this.updateBookInfo} title="Read" books={this.state.books.filter(function myShelfCheck(myShelf) {
-              if (myShelf.shelf === "read") return myShelf;
+              if (myShelf.shelf === "read") {return myShelf} else {return null}
             })} />
           </div>
         </div>

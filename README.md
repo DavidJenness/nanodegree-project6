@@ -31,3 +31,10 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+## Referenced Materias
+
+In addition to the Udacity Videos, I used some of the videos provided by Udacity Project Coaches including:
+
+* [Webinar: Tutorial Requests: FEND Project 6 - Walk Through (SHORT) by Ryan Waite - YouTube](https://www.youtube.com/watch?v=N8bU1oWlLwY&feature=youtu.be)
+* [Webinar: My Reads / React Zoom Study Session w/ Doug Brown [Project Coach]  - YouTube](https://www.youtube.com/watch?v=OcL7-7cRpkQ&feature=youtu.be)
+
