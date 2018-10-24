@@ -34,9 +34,15 @@ class home extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf updateBookInfo={this.updateBookInfo} title="Currently Reading" books={this.state.books.filter(x => x.shelf === "currentlyReading")} />
-            <Shelf updateBookInfo={this.updateBookInfo} title="Want to Read" books={this.state.books.filter(x => x.shelf === "wantToRead")} />
-            <Shelf updateBookInfo={this.updateBookInfo} title="Read" books={this.state.books.filter(x => x.shelf === "read")} />
+            <Shelf updateBookInfo={this.updateBookInfo} title="Currently Reading" books={this.state.books.filter(function myShelfCheck(myShelf) {
+              if (myShelf.shelf === "currentlyReading") return myShelf;
+            })} />
+            <Shelf updateBookInfo={this.updateBookInfo} title="Want to Read" books={this.state.books.filter(function myShelfCheck(myShelf) {
+              if (myShelf.shelf === "wantToRead") return myShelf;
+            })} />
+            <Shelf updateBookInfo={this.updateBookInfo} title="Read" books={this.state.books.filter(function myShelfCheck(myShelf) {
+              if (myShelf.shelf === "read") return myShelf;
+            })} />
           </div>
         </div>
         <SearchPlus />
