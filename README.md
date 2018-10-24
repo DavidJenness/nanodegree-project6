@@ -20,6 +20,7 @@ For my "above and beyond" feature on this project, I added some text that shows 
 * Next use your terminal window (Mac) or Command Prompt (PC) to go to that directory where you unizipped the files.
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
+* open a browser and navigate to:  [http://localhost:3000/]
 
 ## Important
 
