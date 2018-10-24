@@ -14,13 +14,13 @@ For my "above and beyond" feature on this project, I added some text that shows 
 
 ## Installation Instructions
 
-* To install this application, go to this URL : [https://github.com/DavidJenness/nanodegree-project6]
+* To install this application, go to this URL : (https://github.com/DavidJenness/nanodegree-project6)
 * From the "Clone or Download" dropdown, select "Download Zip"
 * Use your favorite unzip utility to decompress the zip to a directory of your choosing.
 * Next use your terminal window (Mac) or Command Prompt (PC) to go to that directory where you unizipped the files.
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
-* open a browser and navigate to:  [http://localhost:3000/]
+* open a browser and navigate to:  (http://localhost:3000/)
 
 ## Important
 
