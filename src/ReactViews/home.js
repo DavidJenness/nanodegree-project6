@@ -35,7 +35,6 @@ componentWillReceiveProps = (props) => {
           </div>
         </div>
         <SearchPlus />
-
       </div>
     );
   }
