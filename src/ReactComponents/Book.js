@@ -18,7 +18,7 @@ class Book extends React.Component {
           </div>
           <div className="book-title">{this.props.book.title || "No Title"}</div>
           <div className="book-authors">
-            //Use the ternary statement to handle one, multiple, or no authors.
+            {/* Use the ternary statement to handle one, multiple, or no authors. */}
             {this.props.book.authors ? this.props.book.authors.toString() : 'No Author'}
           </div>
         </div>
